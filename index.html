@@ -4,17 +4,17 @@
 <body>
 <!-- TradingView Widget BEGIN -->
 
-<button id="save" type="button">Stonk speichern</button>
+<button id="save" type="button" onclick="saveStonk()">Stonk speichern</button>
 <div class="tradingview-widget-container">
   <div id="tradingview_4e78b"></div>
   <div class="tradingview-widget-copyright"><a href="https://de.tradingview.com/symbols/NASDAQ-AAPL/" rel="noopener" target="_blank"><span class="blue-text">AAPL Chart</span></a> von TradingView</div>
   <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
   <script type="text/javascript">
-  new TradingView.widget(
+  let widget = new TradingView.widget(
   {
   "width": 980,
   "height": 610,
-  "symbol": "NASDAQ:AAPL",
+  "symbol": stonk[0],
   "interval": "D",
   "timezone": "Etc/UTC",
   "theme": "light",
@@ -26,6 +26,10 @@
   "container_id": "tradingview_4e78b"
 }
   );
+    
+    function saveStonk(){
+      stonk[0] = widget.symbol;
+    }
   </script>
 </div>
 <!-- TradingView Widget END -->

@@ -1,0 +1,1 @@
+let stonks = ["NASDAQ:AAPL"];
